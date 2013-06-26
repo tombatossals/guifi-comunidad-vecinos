@@ -130,6 +130,10 @@
 /* Section/Article Types                                                         */
 /*********************************************************************************/
 
+	.continue {
+		padding-top: 5em;
+	}
+
 	.is-post
 	{
 		padding-bottom: 5em;
