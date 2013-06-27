@@ -28,7 +28,7 @@
                 <!-- Content -->
                     <div id="content">
                         <div id="content-inner">
-                    
+
                             <!-- Post -->
                                 <article class="is-post is-post-excerpt">
                                     <header>
@@ -62,14 +62,14 @@
                                         <li>Cualquier residente a la comunidad que tenga una segunda residencia y que esté conectado a guifi.net podrá salir a internet a través de la conexión comunitaria y mediante un <strong>túnel VPN</strong> establecido para ese propósito.</li>
                                         <li>Habilitar un <strong>proxy federado</strong> que ofrezca una conexión básica a internet a los usuarios de guifi.net, registrados como tal en la lista de usuarios de proxies federados.</li>
                                     </ul>
-        
+
                                 </article>
-                        
+
                             <!-- Post -->
                                 <article class="is-post is-post-excerpt continue" id="material">
                                     <header>
                                         <h2>Material utilizado</h2>
-                                        <span class="byline">Antenas inalámbricas y enrutades utilizados</span>
+                                        <span class="byline">Antenas inalámbricas, enrutadores y ordenadores</span>
                                     </header>
                                     <div class="info">
                                         <span class="date"><span class="day">2</span></span>
@@ -79,27 +79,49 @@
                                         El material utilizado para la instalación consta de varios componentes, muy diferentes entre sí, pero que una vez intercontectados conforman una estructura de comunicaciones muy robusta. Pasamos a detallarlos en 3 secciones: Supernodo guifi.net, instalación inalámbrica interna y servidor proxy.
                                     </p>
                                     <h3>Supernodo guifi.net</h3>
-                                    <p>Estos sons los componentes utilizados para poner en marcha el supernodo guifi.net en la azotea del edificio:</p>
-                                    <ul>
-                                        <li>
+                                    <p>Estos son los componentes utilizados para poner en marcha el supernodo guifi.net en la azotea del edificio:</p>
+                                    <ul class="style1">
+                                        <li><strong>Omnitik OmniTIK UPA-5HnD</strong>. Antena omnidireccional con capacidad de enrutamiento, que nos hará las labores de interconexión entre clientes, antenas troncales, y la instalación interna de la comunidad. <a href="http://landashop.com/catalog/omnitik-upa5hnd-mikrotik-80211n-tdma-dual-omni-p-2420.html">Enlace</a>.</li>
+                                        <li><strong>3 NanoStation LOCO M5</strong>. Antenas multipropósito, ideales para establecer enlaces troncales con vecinos cercanos ya conectados a la red guifi.net. <a href="http://landashop.com/catalog/ubnt-nanostation-loco-mimo-airmax-p-1681.html">Enlace</a>.</li>
+                                        <li><strong>Cable ethernet CAT5E SFTP</strong>. Cable preparado para exterior, resistente a la intemperie. <a href="http://www.amazon.es/LogiLink-Cable-instalaci%C3%B3n-CAT-SFTP/dp/B002BEN9E2/ref=sr_1_2?ie=UTF8&qid=1372342752&sr=8-2">Enlace</a>.</li>
                                     </ul>
+                                    <h3>Enrutador interno y antenas de cobertura al edificio</h3>
+                                    <p>Estos son los componentes utilizados para el montaje interior, con una picostation por planta y enrutado todo desde la RB2011, que a su vez conectará con la Omnitik:</p>
+                                    <ul class="style1">
+                                        <li><strong>5 picostation M2H</strong>. Antena omnidireccional pequeña y versátil, capaz de conectar a clientes en la frecuencia de los 2,4Ghz (móviles, tablets, portátiles,etc). <a href="http://landashop.com/catalog/picostation-mimo-airmax-antena-omni-rsma-p-1718.html">Enlace</a>.</li>
+                                        <li><strong>Enrutador Mikrotik RB2011UAS-2HnD-IN</strong>. Enrutador de 10 puertos (para conectar las picostations), con suficiente potencia como para utilizarlo además de terminador de túneles VPN. <a href="http://landashop.com/catalog/mikrotik-router-rb2011uas2hndin-1xsfp-5xgiga-5xfast-128mb-80211gn-p-2635.html">Enlace</a>.</li>
+                                        <li><strong>Inyectores POEs pasivos (5x)</strong>. Inyectores POE, necesarios para alimentar correctamente las picostations con un único transformador. <a href="http://landashop.com/catalog/inyector-pasivo-p-2321.html">Enlace</a>.</li>
+                                        <li><strong>Fuente de alimentación 24V-2.5A</strong>. Fuente de alimentación capaz de aguantar la RB2011 y las 5 picostations. <a href="http://landashop.com/catalog/fuente-alimentacion-cable-enchufe-americano-p-2508.html">Enlace</a>.</li>
+                                        <li><strong>Divisor de alimentación</strong>. Para inyectar la señal eléctrica a los POE's de las picostations. <a href="http://landashop.com/catalog/divisor-alimentacion-jack-21mm-hembra-macho-p-2172.html">Enlace</a>.</li>
+                                    </ul>
+                                    <h3>Proxy guifi.net</h3>
+                                    <p>La máquina que hace de proxy federado para la red guifi.net:</p>
+                                    <ul class="style1">
+                                        <li><strong>Raspberry Pi rev2 (512MB de RAM)</strong>. Mini-ordenador que no ocupa espacio y prácticamente no consume nada (3W), corriendo una distribución ArchLinux y haciendo de proxy federado a la red guifi.net, permitiendo que los clientes de cualquier parte de la red puedan salir a internet a través de la conexión a internet básica de la comunidad. <a href="http://www.amazon.es/Raspberry-PI-2-0-Placa-programable/dp/B008PT4GGC/ref=sr_1_1?s=computers&ie=UTF8&qid=1372343760&sr=1-1&keywords=raspberry+pi">Enlace</a>.</li>
+                                    </ul>
+                                    <a href="images/IMG_20130515_193605.jpg" class="image image-full"><img src="images/material02.jpg" alt="" /></a>
                                 </article>
 
                                 <article class="is-post is-post-excerpt continue" id="instalacion">
                                     <header>
                                         <h2>Instalación</h2>
-                                        <span class="byline">Feugiat interdum sed commodo ipsum consequat dolor nullam metus</span>
+                                        <span class="byline">Cómo se realizó la instalación del montaje</span>
                                     </header>
                                     <div class="info">
                                         <span class="date"><span class="day">3</span></span>
                                     </div>
-                                    <a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>
+                                    <a href="images/IMG_20130521_172012.jpg" class="image image-full"><img src="images/instalacion01.jpg" alt="" /></a>
                                     <p>
-                                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus. 
-                                        Nunc nulla velit, fermentum quis interdum quis, tate etiam commodo lorem ipsum dolor sit amet dolore. 
-                                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus. 
-                                        Nunc nulla velit, fermentum quis interdum quis, convallis eu sapien. Integer sed ipsum ante.
+                                        La instalación del material del supernodo se realizó en la azotea siguiendo el estándar de instalaciones guifi.net, los montajes con material híbrido son muy sencillos, ya que la propia Omnitik se encarga de alimentar las antenas que establecen los enlaces troncales, por lo que una vez subido un cable con POE para alimentar a la Omnitik, sólo necesitaremos unos latiguillos cortos para alimentar y enlazar el resto de antenas.
                                     </p>
+                                    <p>
+                                        La parte más interesante del montaje viene con la instalación de las picostation, que van situadas entre plantas, y con un cable se centraliza su conexión en la RB2011 como podéis ver en el esquema de conexión. La capacidad de cobertura que ofrecen estas antenas permiten que los vecinos del edificio consigan una buena cobertura inalámbrica que les conecta a internet.</p>
+                                    </p>
+                                    <a href="images/IMG_20130521_084225.jpg" class="image image-full"><img src="images/instalacion03.jpg" alt="" /></a>
+                                    <p>
+                                        En la caja de conexiones central tenemos la <strong>RB2011</strong>, la alimentación de todas las antenas, la <strong>Raspberry Pi</strong> haciendo de proxy, y el router de la operadora correspondiente dando salida a internet.
+                                    </p>
+                                    <a href="images/IMG_20130529_185008.jpg" class="image image-full"><img src="images/instalacion02.jpg" alt="" /></a>
                                 </article>
 
                                 <article class="is-post is-post-excerpt continue" id="configuracion">
@@ -112,9 +134,9 @@
                                     </div>
                                     <a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>
                                     <p>
-                                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus. 
-                                        Nunc nulla velit, fermentum quis interdum quis, tate etiam commodo lorem ipsum dolor sit amet dolore. 
-                                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus. 
+                                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
+                                        Nunc nulla velit, fermentum quis interdum quis, tate etiam commodo lorem ipsum dolor sit amet dolore.
+                                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
                                         Nunc nulla velit, fermentum quis interdum quis, convallis eu sapien. Integer sed ipsum ante.
                                     </p>
                                 </article>
@@ -123,12 +145,12 @@
 
                     <!-- Sidebar -->
                     <div id="sidebar">
-            
+
                         <!-- Logo -->
                         <div id="logo">
                             <h1>guifi.net</h1>
                         </div>
-                
+
                         <!-- Nav -->
                         <nav id="nav">
                             <h2 style="margin-bottom: 1em; margin-left: .5em;">Comunidad de vecinos</h2>
