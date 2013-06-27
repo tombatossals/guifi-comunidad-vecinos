@@ -17,6 +17,10 @@
 		box-sizing: border-box;
 	}
 
+	p, li {
+		text-align: justify;
+	}
+
 	body, input, textarea
 	{
 		font-family: 'Source Sans Pro', sans-serif;
