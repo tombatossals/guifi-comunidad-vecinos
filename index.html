@@ -115,7 +115,7 @@
                                         La instalación del material del supernodo se realizó en la azotea siguiendo el estándar de instalaciones guifi.net, los montajes con material híbrido son muy sencillos, ya que la propia Omnitik se encarga de alimentar las antenas que establecen los enlaces troncales, por lo que una vez subido un cable con POE para alimentar a la Omnitik, sólo necesitaremos unos latiguillos cortos para alimentar y enlazar el resto de antenas.
                                     </p>
                                     <p>
-                                        La parte más interesante del montaje viene con la instalación de las picostation, que van situadas entre plantas, y con un cable se centraliza su conexión en la RB2011 como podéis ver en el esquema de conexión. La capacidad de cobertura que ofrecen estas antenas permiten que los vecinos del edificio consigan una buena cobertura inalámbrica que les conecta a internet.</p>
+                                        La parte más interesante del montaje viene con la instalación de las picostation, que van situadas entre plantas, y con un cable se interconectan todas en la RB2011, que a su vez conecta contra la Omnitik que hace de supernodo. La capacidad de cobertura que ofrecen estas antenas permiten que los vecinos del edificio consigan una buena cobertura inalámbrica que les conecta a internet.</p>
                                     </p>
                                     <a href="images/IMG_20130521_084225.jpg" class="image image-full"><img src="images/instalacion03.jpg" alt="" /></a>
                                     <p>
@@ -127,18 +127,107 @@
                                 <article class="is-post is-post-excerpt continue" id="configuracion">
                                     <header>
                                         <h2>Configuración</h2>
-                                        <span class="byline">Feugiat interdum sed commodo ipsum consequat dolor nullam metus</span>
+                                        <span class="byline">Conceptos básicos de configuración del montaje</span>
                                     </header>
                                     <div class="info">
                                         <span class="date"><span class="day">4</span></span>
                                     </div>
-                                    <a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>
+                                    <a href="images/IMG_20130529_184954.jpg" class="image image-full"><img src="images/config01.jpg" alt="" /></a>
                                     <p>
-                                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
-                                        Nunc nulla velit, fermentum quis interdum quis, tate etiam commodo lorem ipsum dolor sit amet dolore.
-                                        Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
-                                        Nunc nulla velit, fermentum quis interdum quis, convallis eu sapien. Integer sed ipsum ante.
+                                        Comentaremos de manera conceptual la configuración de cada uno de los dispositivos, si tenéis dudas más técnicas al respecto del montaje podéis realizarlas al final de esta página o en el grupo de <a href="http://castello.guifi.net/mailman/listinfo/usuaris/">guifi.net Castelló</a>.
                                     </p>
+                                    <h3>Picostation</h3>
+                                    <p>Las picostation están configuradas en modo <strong>Access Point</strong>, con seguridad <strong>WPA2</strong>, y <strong>modo bridge</strong>, por lo que su configuración es mínima. Para tener acceso al panel de administración de cada antena les asignaremos subredes privadas independientes (192.168.10.0/24, 192.168.20.0/24, 192.168.30.0/24, 192.168.40.0/24, 192.168.50.0/24).</p>
+                                    <h3>RB2011</h3>
+                                    <p>La RB2011 interconecta las 5 picostations, asignando a cada una una subred privada independiente. Cualquier petición de los clientes de las picostation tendrán acceso directo al router que proporciona acceso a internet. Por tanto, en otro puerto tendrá conectado el router de la operadora. En el séptimo puerto conectaremos la <strong>Raspberry Pi</strong> que hará de proxy federado, y por último el octavo puerto enlazará la RB2011 con la <strong>Omnitik</strong></p>
+                                    <h3>Raspberry Pi</h3>
+                                    <p>Esta máquina lleva una distribución <a href="http://archlinuxarm.org/platforms/armv6/raspberry-pi">Archlinux</a>, y tiene asignadas 2 IP's: una IP pública guifi.net que será la que dará acceso al proxy (10.90.83.66), y una IP privada (192.168.111.2/24) que será la que tendrá la salida a internet para las peticiones de los clientes.</p>
+                                </article>
+
+                                <article class="is-post is-post-excerpt continue" id="fotos">
+                                    <header>
+                                        <h2>Fotos</h2>
+                                        <span class="byline">Fotos del montaje</span>
+                                    </header>
+                                    <div class="info">
+                                        <span class="date"><span class="day">5</span></span>
+                                    </div>
+                                    <div class="gallery">
+                                        <a href="images/IMG_20130515_145511.jpg"><img src="images/thumb.IMG_20130515_145511.jpg" /></a>
+                                        <a href="images/IMG_20130515_145540.jpg"><img src="images/thumb.IMG_20130515_145540.jpg" /></a>
+                                        <a href="images/IMG_20130515_145658.jpg"><img src="images/thumb.IMG_20130515_145658.jpg" /></a>
+                                        <a href="images/IMG_20130516_145750.jpg"><img src="images/thumb.IMG_20130515_145749.jpg" /></a>
+                                        <a href="images/IMG_20130515_145808.jpg"><img src="images/thumb.IMG_20130515_145808.jpg" /></a>
+                                        <a href="images/IMG_20130515_145820.jpg"><img src="images/thumb.IMG_20130515_145820.jpg" /></a>
+                                        <a href="images/IMG_20130515_145833.jpg"><img src="images/thumb.IMG_20130515_145833.jpg" /></a>
+                                        <a href="images/IMG_20130515_145916.jpg"><img src="images/thumb.IMG_20130515_145916.jpg" /></a>
+                                        <a href="images/IMG_20130515_145935.jpg"><img src="images/thumb.IMG_20130515_145935.jpg" /></a>
+                                        <a href="images/IMG_20130515_192642.jpg"><img src="images/thumb.IMG_20130515_192642.jpg" /></a>
+                                        <a href="images/IMG_20130515_192709.jpg"><img src="images/thumb.IMG_20130515_192709.jpg" /></a>
+                                        <a href="images/IMG_20130515_192732.jpg"><img src="images/thumb.IMG_20130515_192732.jpg" /></a>
+                                        <a href="images/IMG_20130515_192851.jpg"><img src="images/thumb.IMG_20130515_192851.jpg" /></a>
+                                        <a href="images/IMG_20130515_192903.jpg"><img src="images/thumb.IMG_20130515_192903.jpg" /></a>
+                                        <a href="images/IMG_20130515_192923.jpg"><img src="images/thumb.IMG_20130515_192923.jpg" /></a>
+                                        <a href="images/IMG_20130515_193020.jpg"><img src="images/thumb.IMG_20130515_193020.jpg" /></a>
+                                        <a href="images/IMG_20130515_193032.jpg"><img src="images/thumb.IMG_20130515_193032.jpg" /></a>
+                                        <a href="images/IMG_20130515_193054.jpg"><img src="images/thumb.IMG_20130515_193054.jpg" /></a>
+                                        <a href="images/IMG_20130515_193106.jpg"><img src="images/thumb.IMG_20130515_193106.jpg" /></a>
+                                        <a href="images/IMG_20130515_193430.jpg"><img src="images/thumb.IMG_20130515_193430.jpg" /></a>
+                                        <a href="images/IMG_20130515_193445.jpg"><img src="images/thumb.IMG_20130515_193445.jpg" /></a>
+                                        <a href="images/IMG_20130515_193501.jpg"><img src="images/thumb.IMG_20130515_193501.jpg" /></a>
+                                        <a href="images/IMG_20130515_193538.jpg"><img src="images/thumb.IMG_20130515_193538.jpg" /></a>
+                                        <a href="images/IMG_20130515_193550.jpg"><img src="images/thumb.IMG_20130515_193550.jpg" /></a>
+                                        <a href="images/IMG_20130515_193605.jpg"><img src="images/thumb.IMG_20130515_193605.jpg" /></a>
+                                        <a href="images/IMG_20130520_194528.jpg"><img src="images/thumb.IMG_20130520_194528.jpg" /></a>
+                                        <a href="images/IMG_20130520_194535.jpg"><img src="images/thumb.IMG_20130520_194535.jpg" /></a>
+                                        <a href="images/IMG_20130520_194629.jpg"><img src="images/thumb.IMG_20130520_194629.jpg" /></a>
+                                        <a href="images/IMG_20130520_194736.jpg"><img src="images/thumb.IMG_20130520_194736.jpg" /></a>
+                                        <a href="images/IMG_20130520_195658.jpg"><img src="images/thumb.IMG_20130520_195658.jpg" /></a>
+                                        <a href="images/IMG_20130520_200554.jpg"><img src="images/thumb.IMG_20130520_200554.jpg" /></a>
+                                        <a href="images/IMG_20130520_204040.jpg"><img src="images/thumb.IMG_20130520_204040.jpg" /></a>
+                                        <a href="images/IMG_20130520_204111.jpg"><img src="images/thumb.IMG_20130520_204111.jpg" /></a>
+                                        <a href="images/IMG_20130521_082642.jpg"><img src="images/thumb.IMG_20130521_082642.jpg" /></a>
+                                        <a href="images/IMG_20130521_084225.jpg"><img src="images/thumb.IMG_20130521_084225.jpg" /></a>
+                                        <a href="images/IMG_20130521_085847.jpg"><img src="images/thumb.IMG_20130521_085847.jpg" /></a>
+                                        <a href="images/IMG_20130521_085902.jpg"><img src="images/thumb.IMG_20130521_085902.jpg" /></a>
+                                        <a href="images/IMG_20130521_085921.jpg"><img src="images/thumb.IMG_20130521_085921.jpg" /></a>
+                                        <a href="images/IMG_20130521_093959.jpg"><img src="images/thumb.IMG_20130521_093959.jpg" /></a>
+                                        <a href="images/IMG_20130521_094009.jpg"><img src="images/thumb.IMG_20130521_094009.jpg" /></a>
+                                        <a href="images/IMG_20130521_094026.jpg"><img src="images/thumb.IMG_20130521_094026.jpg" /></a>
+                                        <a href="images/IMG_20130521_171647.jpg"><img src="images/thumb.IMG_20130521_171647.jpg" /></a>
+                                        <a href="images/IMG_20130521_171706.jpg"><img src="images/thumb.IMG_20130521_171706.jpg" /></a>
+                                        <a href="images/IMG_20130521_171921.jpg"><img src="images/thumb.IMG_20130521_171921.jpg" /></a>
+                                        <a href="images/IMG_20130521_171943.jpg"><img src="images/thumb.IMG_20130521_171943.jpg" /></a>
+                                        <a href="images/IMG_20130521_172012.jpg"><img src="images/thumb.IMG_20130521_172012.jpg" /></a>
+                                        <a href="images/IMG_20130529_184954.jpg"><img src="images/thumb.IMG_20130529_184954.jpg" /></a>
+                                        <a href="images/IMG_20130529_185008.jpg"><img src="images/thumb.IMG_20130529_185008.jpg" /></a>
+
+                                    </div>
+                                </article>
+
+                                <article class="is-post is-post-excerpt continue" id="comentarios">
+                                    <header>
+                                        <h2>Comentarios</h2>
+                                        <span class="byline">¿Dudas o comentarios al respecto del montaje?</span>
+                                    </header>
+                                    <div class="info">
+                                        <span class="date"><span class="day">6</span></span>
+                                    </div>
+                                    <div id="disqus_thread"></div>
+                                    <script type="text/javascript">
+                                        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                                        var disqus_shortname = 'guifi-comunidad-vecinos'; // required: replace example with your forum shortname
+
+                                        /* * * DON'T EDIT BELOW THIS LINE * * */
+                                        (function() {
+                                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                        })();
+                                    </script>
+                                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
                                 </article>
                         </div>
                     </div>
@@ -159,6 +248,8 @@
                                 <li class="current_page_item"><a href="#material">2. Material</a></li>
                                 <li class="current_page_item"><a href="#instalacion">3. Instalación</a></li>
                                 <li class="current_page_item"><a href="#configuracion">4. Configuración</a></li>
+                                <li class="current_page_item"><a href="#fotos">5. Fotos</a></li>
+                                <li class="current_page_item"><a href="#comentarios">6. Comentarios</a></li>
                             </ul>
                         </nav>
                         <div id="copyright">
