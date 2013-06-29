@@ -45,18 +45,18 @@
                                     </div>
                                     <a href="#" class="image image-full"><img src="images/logo01.png" alt="" /></a>
                                     <p>
-                                        Vamos a describir en este artículo el proceso de puesta en marcha de una conexión inalámbrica comunitaria, compartiendo una salida a internet básica entre todos los vecinos, e interconectando el montaje con la red <a href="http://guifi.net">guifi.net</a>, proporcionando un punto de acceso de conexión a la red ciudadana a nodos contiguos al edificio.
+                                        Vamos a describir en este artículo el proceso de puesta en marcha de una conexión inalámbrica comunitaria, compartiendo una salida a internet básica entre todos los vecinos, e interconectando el montaje con la red <a href="http://guifi.net">guifi.net</a>, proporcionando así un punto de acceso de conexión a la red ciudadana a nodos contiguos al edificio, así como una salida a internet a la gente interesada.
                                     </p>
                                     <p>
                                         Esta instalación se llevó a cabo y está funcionando actualmente en el supernodo <a href="http://guifi.net/benarabe">Benárabe</a> de Castellón de la Plana.
                                     </p>
                                     <h3>Objetivos</h3>
                                     <p>
-                                        El objetivo propuesto en el montaje no es otro que proporcionar una conexión a Internet básica a todos los residentes en la comunidad mediante conexión inalámbrica, lo que permite que cualquier dispositivo móvil, tableta u ordenador de vecinos o invitados consigan establecer una conexión a la red, ya sea de manera puntual o permanente. Pasemos a detallar un poco os objetivos marcados:
+                                        El objetivo propuesto en el montaje no es otro que proporcionar una conexión a Internet básica a todos los residentes en la comunidad mediante conexión inalámbrica, lo que permite que cualquier dispositivo móvil, tableta u ordenador ya sea de vecinos o invitados consigan establecer una conexión a la red de manera puntual o permanente. Pasemos a detallar un poco los objetivos marcados:
                                     </p>
                                     <ul class="style1">
-                                        <li>Contratar una <strong>conexión a internet</strong> con una operadora a nombre de la comunidad de vecinos, asociada a la línea de teléfono ya contratada para el ascensor.</li>
-                                        <li>La conexión se <strong>financiará</strong> entre todos los vecinos mediante mensualidades. La cuota por vecino será de 1 euro (19 vecinos y 19,95€ la cuota mensual).</li>
+                                        <li>Contratar una <strong>conexión a internet</strong> con una operadora a nombre de la comunidad de vecinos, asociada a la línea de teléfono del ascensor.</li>
+                                        <li>La conexión se <strong>financiará</strong> entre todos los vecinos mediante mensualidades. La cuota por vecino será de 1 euro aproximadamente (19 vecinos y 19,95€ la cuota mensual).</li>
                                         <li>Cada dos plantas se instalará un <strong>punto de acceso inalámbrico</strong> capaz de dar cobertura a los 2 pisos que cubre.</li>
                                         <li>En la azotea se instalará una <strong>antena de cobertura guifi.net</strong> (supernodo), así como 3 antenas que establezcan <strong>enlaces troncales</strong> a otros supernodos adyacentes conectados a la red guifi.net.</li>
                                         <li>Cualquier residente a la comunidad que tenga una segunda residencia y que esté conectado a guifi.net podrá salir a internet a través de la conexión comunitaria y mediante un <strong>túnel VPN</strong> establecido para ese propósito.</li>
@@ -86,7 +86,7 @@
                                         <li><strong>Cable ethernet CAT5E SFTP</strong>. Cable preparado para exterior, resistente a la intemperie. <a href="http://www.amazon.es/LogiLink-Cable-instalaci%C3%B3n-CAT-SFTP/dp/B002BEN9E2/ref=sr_1_2?ie=UTF8&qid=1372342752&sr=8-2">Enlace</a>.</li>
                                     </ul>
                                     <h3>Enrutador interno y antenas de cobertura al edificio</h3>
-                                    <p>Estos son los componentes utilizados para el montaje interior, con una picostation por planta y enrutado todo desde la RB2011, que a su vez conectará con la Omnitik:</p>
+                                    <p>Estos son los componentes utilizados para el montaje interior, con una picostation cada dos plantas y enrutando todo el tráfico desde la RB2011, que a su vez conectará con la Omnitik:</p>
                                     <ul class="style1">
                                         <li><strong>5 picostation M2H</strong>. Antena omnidireccional pequeña y versátil, capaz de conectar a clientes en la frecuencia de los 2,4Ghz (móviles, tablets, portátiles,etc). <a href="http://landashop.com/catalog/picostation-mimo-airmax-antena-omni-rsma-p-1718.html">Enlace</a>.</li>
                                         <li><strong>Enrutador Mikrotik RB2011UAS-2HnD-IN</strong>. Enrutador de 10 puertos (para conectar las picostations), con suficiente potencia como para utilizarlo además de terminador de túneles VPN. <a href="http://landashop.com/catalog/mikrotik-router-rb2011uas2hndin-1xsfp-5xgiga-5xfast-128mb-80211gn-p-2635.html">Enlace</a>.</li>
@@ -97,7 +97,7 @@
                                     <h3>Proxy guifi.net</h3>
                                     <p>La máquina que hace de proxy federado para la red guifi.net:</p>
                                     <ul class="style1">
-                                        <li><strong>Raspberry Pi rev2 (512MB de RAM)</strong>. Mini-ordenador que no ocupa espacio y prácticamente no consume nada (3W), corriendo una distribución ArchLinux y haciendo de proxy federado a la red guifi.net, permitiendo que los clientes de cualquier parte de la red puedan salir a internet a través de la conexión a internet básica de la comunidad. <a href="http://www.amazon.es/Raspberry-PI-2-0-Placa-programable/dp/B008PT4GGC/ref=sr_1_1?s=computers&ie=UTF8&qid=1372343760&sr=1-1&keywords=raspberry+pi">Enlace</a>.</li>
+                                        <li><strong>Raspberry Pi rev2 (512MB de RAM)</strong>. Mini-ordenador que no ocupa espacio y que prácticamente no consume nada (3W), corriendo una distribución ArchLinux y haciendo de proxy federado a la red guifi.net, permitiendo que los conectados a guifi.net de cualquier parte de la red ciudadana puedan salir a internet a través de la conexión a internet básica de la comunidad. <a href="http://www.amazon.es/Raspberry-PI-2-0-Placa-programable/dp/B008PT4GGC/ref=sr_1_1?s=computers&ie=UTF8&qid=1372343760&sr=1-1&keywords=raspberry+pi">Enlace</a>.</li>
                                     </ul>
                                     <a href="images/IMG_20130515_193605.jpg" class="image image-full"><img src="images/material02.jpg" alt="" /></a>
                                 </article>
@@ -111,9 +111,12 @@
                                         <span class="date"><span class="day">3</span></span>
                                     </div>
                                     <a href="images/IMG_20130521_172012.jpg" class="image image-full"><img src="images/instalacion01.jpg" alt="" /></a>
+                                    <h3>Supernodo guifi.net</h3>
                                     <p>
                                         La instalación del material del supernodo se realizó en la azotea siguiendo el estándar de instalaciones guifi.net, los montajes con material híbrido son muy sencillos, ya que la propia Omnitik se encarga de alimentar las antenas que establecen los enlaces troncales, por lo que una vez subido un cable con POE para alimentar a la Omnitik, sólo necesitaremos unos latiguillos cortos para alimentar y enlazar el resto de antenas.
                                     </p>
+                                    <a href="images/IMG_20130515_145808.jpg" class="image image-full"><img src="images/instalacion04.jpg" alt="" /></a>
+                                    <h3>Enrutador interno y antenas de cobertura al edificio</h3>
                                     <p>
                                         La parte más interesante del montaje viene con la instalación de las picostation, que van situadas entre plantas, y con un cable se interconectan todas en la RB2011, que a su vez conecta contra la Omnitik que hace de supernodo. La capacidad de cobertura que ofrecen estas antenas permiten que los vecinos del edificio consigan una buena cobertura inalámbrica que les conecta a internet.</p>
                                     </p>
@@ -139,9 +142,9 @@
                                     <h3>Picostation</h3>
                                     <p>Las picostation están configuradas en modo <strong>Access Point</strong>, con seguridad <strong>WPA2</strong>, y <strong>modo bridge</strong>, por lo que su configuración es mínima. Para tener acceso al panel de administración de cada antena les asignaremos subredes privadas independientes (192.168.10.0/24, 192.168.20.0/24, 192.168.30.0/24, 192.168.40.0/24, 192.168.50.0/24).</p>
                                     <h3>RB2011</h3>
-                                    <p>La RB2011 interconecta las 5 picostations, asignando a cada una una subred privada independiente. Cualquier petición de los clientes de las picostation tendrán acceso directo al router que proporciona acceso a internet. Por tanto, en otro puerto tendrá conectado el router de la operadora. En el séptimo puerto conectaremos la <strong>Raspberry Pi</strong> que hará de proxy federado, y por último el octavo puerto enlazará la RB2011 con la <strong>Omnitik</strong></p>
+                                    <p>La RB2011 interconecta las 5 picostations, asignando a cada una una subred privada independiente. Cualquier petición de los clientes de las picostation tendrán acceso directo al router que proporciona acceso a internet. Por tanto, en otro puerto tendrá conectado el router de la operadora. En el séptimo puerto conectaremos la <strong>Raspberry Pi</strong> que hará de proxy federado, y por último el octavo puerto enlazará la RB2011 con la <strong>Omnitik</strong>. Únicamente los clientes conectados a las picostation tendrán salida directa a internet, así como las peticiones web del proxy federado, y los clientes del servidor de túneles VPN PPTP.</p>
                                     <h3>Raspberry Pi</h3>
-                                    <p>Esta máquina lleva una distribución <a href="http://archlinuxarm.org/platforms/armv6/raspberry-pi">Archlinux</a>, y tiene asignadas 2 IP's: una IP pública guifi.net que será la que dará acceso al proxy (10.90.83.66), y una IP privada (192.168.111.2/24) que será la que tendrá la salida a internet para las peticiones de los clientes.</p>
+                                    <p>Esta máquina lleva una distribución <a href="http://archlinuxarm.org/platforms/armv6/raspberry-pi">Archlinux</a>, y tiene asignadas 2 IP's: una IP pública guifi.net que será la que dará acceso al proxy (10.90.83.66), y una IP privada (192.168.111.2/24) que será la que tendrá la salida a internet para las peticiones de los clientes. El servidor proxy es un <a href="http://www.squid-cache.org/">Squid</a> configurado para autenticar usuarios federados de la red guifi.net.</p>
                                 </article>
 
                                 <article class="is-post is-post-excerpt continue" id="legalidad">
@@ -156,9 +159,9 @@
                                         Una instalación de Internet compartido para la comunidad, según la propia <a href="http://es.wikipedia.org/wiki/Comisi%C3%B3n_del_Mercado_de_las_Telecomunicaciones_de_Espa%C3%B1a">CMT</a> es perfectamente legal tal y como publican en su blog con fecha <i>14 de Setiembre del 2010</i>:
                                     </p>
                                     <p><a href="http://blogcmt.com/2010/09/14/vecinos-que-comparten-wifi/">http://blogcmt.com/2010/09/14/vecinos-que-comparten-wifi/</a></p>
-                                    <p>La instalación del supernodo de guifi.net comunitario también es perfectamente legal. Si hubieran vecinos disconformes con la instalación, el montaje se financiaría por todos aquellos vecinos confoormes con la instalación.</p>
+                                    <p>La instalación del supernodo de guifi.net comunitario también es un montaje totalmente reglamentario, simplemente hay que consensuarlo bien con los vecinos si se va a sufragar de manera conjunta. Si hubieran vecinos disconformes con la instalación, el montaje se financiaría por todos aquellos vecinos interesados.</p>
 
-                                    <p>La actividad de <strong>proxy federado</strong> que ofrece el supernodo está ya contemplada como actividad legal dentro de la red comunitaria de <a href="http://guifi.net">guifi.net</a>.</p>
+                                    <p>A parte, la función de <strong>proxy federado</strong> que ofrece el supernodo está ya contemplada como actividad legal dentro de la red comunitaria de <a href="http://guifi.net">guifi.net</a>, por lo que no es necesario notificarla.</p>
 
                                 </article>
 
